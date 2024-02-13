@@ -6,7 +6,7 @@ const SocketContext = createContext();
 const ioDomain =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3005"
-    : "https://wordle-cup-chat.vercel.app/";
+    : "https://wordle-cup-chat.vercel.app";
 const Socket = io(ioDomain);
 const SocketProvider = ({ children }) => {
   const [userName, setUserName] = useState("");
