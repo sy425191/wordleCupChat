@@ -3,13 +3,17 @@ import { io } from "socket.io-client";
 
 const SocketContext = createContext();
 
-const Socket = io("http://localhost:3005");
+const ioDomain =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:3005"
+    : "https://wordle-cup-chat.vercel.app/";
+const Socket = io(ioDomain);
 const SocketProvider = ({ children }) => {
   const [userName, setUserName] = useState("");
   const [totalUsers, setTotalUsers] = useState(0);
 
   useEffect(() => {
-    console.log(Socket)
+    console.log(Socket);
     if (userName === "") {
       const name = localStorage.getItem("userName");
       if (name) {
