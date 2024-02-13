@@ -1,14 +1,13 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect } from "react";
 import ChatMessage from "../components/chatRoom/chatMessage";
 import ChatRoomDetails from "../components/chatRoom/chatRoomDetails";
 import WordlePlayerBarComponent from "../components/chatRoom/chatSidebar";
 import ChatTypeBox from "../components/chatRoom/chatTypeBox";
 import { ChatRoomContext } from "../context/ChatContext";
-import { Socket, SocketContext } from "../socket/connect";
+import { Socket } from "../socket/connect";
 
-const ChatRoom = () => {
+const ChatRoomPage = () => {
   const chatContext = useContext(ChatRoomContext);
-  const socketContext = useContext(SocketContext);
 
   useEffect(() => {
     Socket.on("chat_message", (message) => {
@@ -35,4 +34,4 @@ const ChatRoom = () => {
   );
 };
 
-export default ChatRoom;
+export default ChatRoomPage;
