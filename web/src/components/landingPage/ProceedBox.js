@@ -2,7 +2,7 @@ import ProceedButton from "./ProceedButton";
 
 const ProceedBox = () => {
   return (
-    <div className="relative w-full md:w-96 rounded-lg h-full md:h-1/2">
+    <div className="relative w-96 rounded-lg h-1/2">
       <div className="absolute w-full h-full bg-yellow-500 opacity-50 rounded-lg rotate-12 z-10"></div>
 
       <div className="absolute w-full h-full bg-slate-50 z-20 flex flex-col items-center justify-evenly">
@@ -10,6 +10,7 @@ const ProceedBox = () => {
           v1.0
         </div>
         <div className="absolute top-0 left-0 p-2 bg-slate-700 text-white text-xs font-bold rounded-br-lg">
+          <i className="fa fa-user pr-1"></i>
           8 People Online
         </div>
         <img
@@ -18,7 +19,7 @@ const ProceedBox = () => {
           alt="WordleCupChat ICON"
         />
         <div className="text-2xl text-slate-700 font-bold uppercase">
-          WordleCupChat
+          WordleCup Chat
         </div>
 
         <div className="flex flex-col items-center text-slate-500 font-monospace text-xs w-3/4 px-2 py-2 border-2 border-slate-400 rounded text-center px-4">
@@ -34,7 +35,7 @@ const ProceedBox = () => {
               className="mr-2"
             >
               <span className="text-yellow-700 font-bold hover:underline">
-                Follow us on Twitter
+                Follow us on Twitter <i className="fa fa-twitter"></i>
               </span>
             </a>
             <a
@@ -44,7 +45,7 @@ const ProceedBox = () => {
               className="mr-2 font-semibold"
             >
               <span className="text-yellow-600 hover:underline">
-                Play Wordle
+                Play Wordle <i className="fa fa-play-circle"></i>
               </span>
             </a>
           </div>
