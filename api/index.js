@@ -9,10 +9,10 @@ const io = new Server(server, {
   cors: {
     origin: process.env.CLIENT_URL,
     methods: ["GET", "POST"],
-    serveClient: false,
-    transports: ['websocket'],
-    secure: true,
   },
+  serveClient: false,
+  transports: ["websocket"],
+  secure: true,
 });
 
 io.on("connection", (socket) => {
