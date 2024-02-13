@@ -9,6 +9,7 @@ const SocketProvider = ({ children }) => {
   const [totalUsers, setTotalUsers] = useState(0);
 
   useEffect(() => {
+    console.log(Socket)
     if (userName === "") {
       const name = localStorage.getItem("userName");
       if (name) {
