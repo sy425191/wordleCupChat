@@ -22,6 +22,7 @@ const WordleInputBox = ({ index, activeWordleInput, setActiveWordleInput }) => {
       onChange={(e) => {
         setInput(e.target.value);
         if (activeWordleInput < 29) {
+          if (e.target.value.length < 1) return;
           setActiveWordleInput((prev) => prev + 1);
         }
       }}

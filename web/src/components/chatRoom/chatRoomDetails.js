@@ -1,14 +1,23 @@
+import { useContext } from "react";
+import { SocketContext } from "../../socket/connect";
+import { Link } from "react-router-dom";
+
 const ChatRoomDetails = () => {
+  const socketContext = useContext(SocketContext);
   return (
     <div className="w-full h-12 px-3 flex items-center gap-x-2 rounded-lg bg-slate-400">
-      <img
-        src={"/landingIcon.png"}
-        alt={"Wordle-Cup Dev Team Fun Room"}
-        className="w-10 h-10 rounded-full"
-      />
+      <Link to={"/"} className="text-2xl font-bold text-slate-800">
+        <img
+          src={"/landingIcon.png"}
+          alt={"Wordle-Cup Dev Team Fun Room"}
+          className="w-10 h-10 rounded-full"
+        />
+      </Link>
       <div className="flex-1 font-semibold text-slate-800 flex flex-col">
         <div>Wordle-Cup Dev Team Fun Room</div>
-        <div className="text-xs text-slate-600">5 Members Active</div>
+        <div className="text-xs text-slate-600">
+          {socketContext.totalUsers} Members Active
+        </div>
       </div>
       <div className="flex gap-x-2">
         <button
