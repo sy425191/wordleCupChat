@@ -6,7 +6,7 @@ import { SocketProvider } from "./socket/connect.js";
 
 function App() {
   return (
-    <div className="App overflow-hidden">
+    <div className="App overflow-hidden scroll-smooth">
       <ChatRoomProvider>
         <SocketProvider>
           <BrowserRouter basename="/">
