@@ -2,7 +2,7 @@ import LandingPage from "./pages/Landing.js";
 
 function App() {
   return (
-    <div className="App text-5xl">
+    <div className="App">
       <LandingPage />
     </div>
   );
