@@ -13,6 +13,10 @@ const ChatRoomPage = () => {
     Socket.on("chat_message", (message) => {
       chatContext.receiveMessage(message);
     });
+
+    return () => {
+      Socket.off("chat_message");
+    };
   }, []);
 
   return (
