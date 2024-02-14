@@ -3,11 +3,9 @@ import { io } from "socket.io-client";
 
 const SocketContext = createContext();
 
-const ioDomain =
-  process.env.NODE_ENV === "development"
-    ? "http://localhost:3005"
-    : "https://wordle-cup-chat.vercel.app";
-const Socket = io(ioDomain);
+const Socket = io("https://wordle-chat.webpubsub.azure.com", {
+  path: "/clients/socketio/hubs/eio_hub",
+});
 const SocketProvider = ({ children }) => {
   const [userName, setUserName] = useState("");
   const [totalUsers, setTotalUsers] = useState(0);

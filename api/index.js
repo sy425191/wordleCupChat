@@ -2,17 +2,19 @@ import dotenv from "dotenv";
 import { Server } from "socket.io";
 import { app } from "./app.js";
 import http from "http";
+import { useAzureSocketIO } from "@azure/web-pubsub-socket.io";
 dotenv.config();
 
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL,
-    methods: ["GET", "POST"],
+    origin: "*",
   },
-  serveClient: false,
-  transports: ["websocket"],
-  secure: true,
+});
+
+useAzureSocketIO(io, {
+  hub: "eio_hub", // The hub name can be any valid string.
+  connectionString: process.env.WEBPUBSUB_SECRET,
 });
 
 io.on("connection", (socket) => {
