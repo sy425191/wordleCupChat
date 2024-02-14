@@ -32,9 +32,12 @@ const ChatRoomDetails = () => {
         >
           <i className="fa fa-expand"></i>
         </button>
-        <button className="rounded-xl bg-rose-700 px-3 py-1.5 font-semibold text-rose-50 hover:bg-rose-800 duration-300">
+        <Link
+          to={"/"}
+          className="rounded-xl bg-rose-700 px-3 py-1.5 font-semibold text-rose-50 hover:bg-rose-800 duration-300"
+        >
           Leave
-        </button>
+        </Link>
       </div>
     </div>
   );

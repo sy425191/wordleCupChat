@@ -32,7 +32,9 @@ const ChatTypeBox = () => {
         }}
       />
 
-      <button className="rounded-xl bg-slate-600 px-3 font-semibold text-slate-50 hover:bg-slate-700 duration-300">
+      <button className="rounded-xl bg-slate-600 px-3 font-semibold text-slate-50 hover:bg-slate-700 duration-300"
+      onClick={() => chatContext.setTypedMessages(chatContext.typedMessages + "🙂")}
+      >
         🙂
       </button>
 
