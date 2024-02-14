@@ -12,11 +12,13 @@ const io = new Server(server, {
   },
 });
 
+const connectionString =
+  process.env.WEBPUBSUB_SECRET ||
+  "https://wordle-chat.webpubsub.azure.com;AccessKey=ZgvE7W7KoF1+C6ryZ1o/CbzkIHLaxZTeXsNluRy06sQ=;Version=1.0;";
+
 useAzureSocketIO(io, {
-  hub: "eio_hub", // The hub name can be any valid string.
-  connectionString:
-    process.env.WEBPUBSUB_SECRET ||
-    "https://wordle-chat.webpubsub.azure.com;AccessKey=ZgvE7W7KoF1+C6ryZ1o/CbzkIHLaxZTeXsNluRy06sQ=;Version=1.0;",
+  hub: "WordleHub",
+  connectionString: connectionString,
 });
 
 io.on("connection", (socket) => {

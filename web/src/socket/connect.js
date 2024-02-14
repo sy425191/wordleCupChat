@@ -4,7 +4,7 @@ import { io } from "socket.io-client";
 const SocketContext = createContext();
 
 const Socket = io("https://wordle-chat.webpubsub.azure.com", {
-  path: "/clients/socketio/hubs/eio_hub",
+  path: "/clients/socketio/hubs/WordleHub",
 });
 const SocketProvider = ({ children }) => {
   const [userName, setUserName] = useState("");
